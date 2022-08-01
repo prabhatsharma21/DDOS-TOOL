@@ -1,4 +1,4 @@
-# Saphyra
-saphyra ddos tool
+# DDOS tool
+ ddos tool
 useful to protect your website from ddos attack.
 only for education and cybersecurity purpose
